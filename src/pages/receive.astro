@@ -1,0 +1,12 @@
+---
+import MainLayout from '../layouts/main.astro';
+
+import ReceivePage from '../components/ReceivePage.svelte';
+---
+
+<MainLayout
+  title="Secure File Sharing"
+  description="A client-Side Secure File Sharing Using WebRTC and PGP."
+>
+  <ReceivePage client:load client:only="svelte" />
+</MainLayout>

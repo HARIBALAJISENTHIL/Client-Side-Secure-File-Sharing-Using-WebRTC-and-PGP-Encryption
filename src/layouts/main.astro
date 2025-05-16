@@ -1,0 +1,41 @@
+---
+
+import Navbar from '../components/layout/Navbar.astro';
+
+import { pageDescription } from '../configs';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <link rel="icon" href="/image.avif" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#fff" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+  </head>
+
+  <body>
+    <div class="flex flex-col min-h-screen bg-base-200" style="background-image: url('D:\zero-share-main\background.jpeg'); background-size: cover; background-position: center;">
+      <Navbar />
+      <div class="flex-grow container mx-auto justify-items-center">
+        <p class="text-center mb-4 xl:mb-8 p-1">
+          {pageDescription}
+        </p>
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>
